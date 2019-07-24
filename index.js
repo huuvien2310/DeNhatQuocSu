@@ -17,6 +17,7 @@ client.on('message', (message) => {
 
   if (foundInText){
     message.react("🔫")
+    message.react(message.guild.emojis.get('603412266595123200'))
     message.channel.send(`${message.author}, Đụ má mày chửi thề con cặc nói chuyện vô văn hóa! Tao :gun: mày đó!`)
   }
 });
