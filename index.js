@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const { token, api, port } = require('./config.json');
+const MinhID = '328939258725269517';
 
 const client = new Discord.Client();
 
@@ -20,18 +21,19 @@ client.on('message', (message) => {
     message.react(message.guild.emojis.get('603412266595123200'))
     message.channel.send(`${message.author}, Đụ má mày chửi thề con cặc nói chuyện vô văn hóa! Tao :gun: mày đó!`)
   }
-  if (message.author.id) = 337137645081853954;
+  if (message.author.id == MinhID){
 
-  let blacklist2 = ['b5'];
+    let blacklist2 = ['b5'];
 
-  let foundInText2 = false;
-  for (var i in blacklist2){
-   if (message.content.toLowerCase().includes(blacklist2[i].toLowerCase())) foundInText2 = true;
-  }
+    let foundInText2 = false;
+    for (var i in blacklist2){
+      if (message.content.toLowerCase().includes(blacklist2[i].toLowerCase())) foundInText2 = true;
+    }
 
-  if (foundInText2){
-    message.react("🔫")
-    message.channel.send(`${message.author}, Đụ má mày chơi dơ! Tao :gun: mày đó!`)
+    if (foundInText2){
+      message.react("🔫")
+      message.channel.send(`${message.author}, Đụ má mày chơi dơ! Tao :gun: mày đó!`)
+    }
   }
 });
 
