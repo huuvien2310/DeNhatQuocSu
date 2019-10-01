@@ -7,7 +7,7 @@ const client = new Discord.Client();
 client.on('message', (message) => {
   client.user.setActivity("Youtube", {type: "WATCHING"})
   
-
+  if (message.author.bot) return;
 
   let blacklist = ['địt', 'đụ', 'đĩ', 'đỉ', 'lồn', 'loz', 'đụ má', 'đĩ mẹ','đụ mẹ', 'cặc'];
 
