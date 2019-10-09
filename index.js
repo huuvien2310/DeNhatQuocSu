@@ -18,9 +18,11 @@ client.on('message', (message) => {
 
   if (foundInText){
     message.react("🔫")
-    message.react(message.guild.emojis.get('603412266595123200'))
+    let customEmoji = message.guild.emojis.get("631511891440828431")
+    message.react(customEmoji)
     message.channel.send(`${message.author}, Đụ má mày chửi thề con cặc nói chuyện vô văn hóa! Tao :gun: mày đó!`)
   }
+  
   if (message.author.id == MinhID){
 
     let blacklist2 = ['b5'];
