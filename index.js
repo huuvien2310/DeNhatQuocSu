@@ -1,12 +1,13 @@
 const Discord = require('discord.js');
-const { token, api, port } = require('./config.json');
-const MinhID = '328939258725269517';
+const { api, port } = require('./config.json');
+require("dotenv").config();
 
 const client = new Discord.Client();
+const prefix = '!';
 
 client.on('message', (message) => {
   client.user.setActivity("Youtube", {type: "WATCHING"})
-  
+
   if (message.author.bot) return;
 
   let blacklist = ['địt', 'đụ', 'đĩ', 'đỉ', 'lồn', 'loz', 'đụ má', 'đĩ mẹ','đụ mẹ', 'cặc'];
@@ -22,25 +23,23 @@ client.on('message', (message) => {
     message.channel.send(`${message.author}, Đụ má mày chửi thề con cặc nói chuyện vô văn hóa! Tao :gun: mày đó!`)
     message.react(customEmoji)
   }
-  
-  if (message.author.id == MinhID){
 
-    let blacklist2 = ['b5'];
+  let command = message.content.split(' ')[0].slice(1);
+  let args = message.content.replace('!' + command, '').trim();
 
-    let foundInText2 = false;
-    for (var i in blacklist2){
-      if (message.content.toLowerCase().includes(blacklist2[i].toLowerCase())) foundInText2 = true;
-    }
+  if(!command) return;
 
-    if (foundInText2){
-      message.react("🔫")
-      message.channel.send(`${message.author}, Đụ má mày chơi dơ! Tao :gun: mày đó!`)
-    }
+  switch(command){
+    case "pin":
+      client.channels.get(`828441457093771284`).send(`📌${args}`);
+      //message.channel.send(`📌${args}`);
+      break;
   }
+
 });
 
 client.on('ready', () => {
   console.log('Bot is now connected');
 });
 
-client.login(token);
+client.login(process.env.TOKEN);

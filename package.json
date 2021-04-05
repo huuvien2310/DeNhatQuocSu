@@ -10,6 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1"
-  }
+    "discord.js": "^11.6.4",
+    "dotenv": "^8.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huuvien2310/DeNhatQuocSu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/huuvien2310/DeNhatQuocSu/issues"
+  },
+  "homepage": "https://github.com/huuvien2310/DeNhatQuocSu#readme"
 }
